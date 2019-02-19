@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sales Page</title> <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<style>
+    .container{border: solid 1px black; background-color: #ECECEC}
+     .nav-item{margin-left: 80%; color: red}
+    .navbar-navbar-expand-lg-navbar-light-bg-light{background-color: #FFF2F2;
+    border: solid 1px black; margin-top: 2%}
+    .navbar-brand{margin-left: 9px}
+    .heading{margin-top: 2%;}
+    .main-body{width: 80%;border: solid 1px black; margin-left: 10%;
+    margin-top: 3%; background-color: white; margin-bottom: 7%}
+    .form-signin{width: 50%;margin-left: 24%;
+    margin-bottom: 10%;}
+    .form-control{margin-bottom: 4%}
+    .btn-btn-lg-btn-primary-btn-block{width: 40%; color: green;  }
+    .btn-btn-lg-btn-primary-btn-block2{width: 40%; color: red; margin-top: 5%}
+</style>
+<body>
+    <div class="container">
+            <nav class="navbar-navbar-expand-lg-navbar-light-bg-light">
+                    <a class="navbar-brand" href="#">
+                            <img src="C:\projects\bip\Lipsome\Assets\img\weedhub.png" width="30" height="30" alt="">
+                          </a>
+                          <a class="nav-item" href="#">Log Out</a>
+                        </nav>
+                        <div class="heading"> <h6>Store Inventory System</h6></div>
+                        <br>
+                        <div class="main-body">
+                                <table name="tableH" class="table table-striped">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Vehicle Type</th>
+                                            <th scope="col">Available Quantity</th>
+                                            <th scope="col">Units</th>
+                                            <th scope="col">Price per Unit $</th>
+                                            <th scope="col">Total Price $</th>
+                                            <th scope="col"></th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <script>
+                                            //collect currently available unit
+                                              //collect unit purchased
+                                              //deduct unit from available
+                                            function doinventory(){
+                                              
+                                              var available= parseInt(tableH.boxa.value);
+                                              var units= parseInt(tableH.boxb.value);
+                                 
+                                              var newAvailable= available - units;
+                                 
+                                              tableH.boxd.value = newAvailable;
+                                          }
+                                        </script>
+                                          <tr>
+                                            <th scope="row">1</th>
+                                            <td>Carburator</td>
+                                            <td>Honda</td>
+                                            <td> <input  readonly name="boxa" value="15" size= "1" type="text" placeholder="0" ></td>
+                                            <td><input onkeyup ="doinventory()" name="boxb" size="1" type="text" placeholder="0"></td>
+                                            <td> <input readonly name="boxc" size="1" type="text" value="300"></td>
+                                            <td><input name="boxb" size="1" type="text" placeholder="0"></td>
+                                            <td><i class="fas fa-times"></i></td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">2</th>
+                                            <td>Brake Pad</td>
+                                            <td>Benz</td>
+                                            <td>30</td>
+                                            <td>04</td>
+                                            <td>190</td>
+                                            <td>760</td>
+                                            <td><i class="fas fa-times"></i></td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">3</th>
+                                            <td>Side Mirror</td>
+                                            <td>BMW</td>
+                                            <td>15</td>
+                                            <td>02</td>
+                                            <td>400</td>
+                                            <td>800</td>
+                                            <td><i class="fas fa-times"></i></td>
+                                          </tr>
+                                          <tr>
+                                                <th scope="row"><i class="far fa-plus-square"></i></th>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                      <br>
+                                      <body class="text-center">
+                                      <form class="form-signin">
+                                            <img class="mb-4" src="/docs/4.2/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+                                            <h1 class="h3-mb-3-font-weight-normal">Customer Info</h1>
+                                            <label for="inputEmail" class="sr-only">Name</label>
+                                            <input type="email" id="inputEmail" class="form-control" placeholder="Name" required autofocus>
+                                            <label for="inputPassword" class="sr-only">Phone Number</label>
+                                            <input type="password" id="inputPassword" class="form-control" placeholder="Phone Number" required>
+                                            <label for="inputPassword" class="sr-only">Address</label>
+                                            <input type="password" id="inputPassword" class="form-control" placeholder="Address" required>
+                                            
+                                            <button class="btn-btn-lg-btn-primary-btn-block" type="submit">Place Order</button>
+                                            <button class="btn-btn-lg-btn-primary-btn-block2" type="submit">Cancel</button>
+                                           
+                                            </form>
+                                        </body>
+                        </div>
+    </div>
+    
+</body>
+</html>
