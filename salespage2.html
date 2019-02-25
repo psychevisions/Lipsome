@@ -22,18 +22,57 @@
     .btn-btn-lg-btn-primary-btn-block{width: 40%; color: green;  }
     .btn-btn-lg-btn-primary-btn-block2{width: 40%; color: red; margin-top: 5%}
 </style>
+ <script>
+              function doinventory(){
+                
+                var available= parseInt(tableH.boxa.value);
+                var units= parseInt(tableH.boxb.value);
+
+                var newAvailable= available - units;
+
+                tableH.boxa.value = newAvailable;
+
+                var  total = units * parseInt(tableH.boxc.value);
+                tableH.boxd.value = total  
+  }
+  function doinventory2(){
+                
+                var available= parseInt(tableH.boxe.value);
+                var units= parseInt(tableH.boxf.value);
+
+                var newAvailable= available - units;
+
+                tableH.boxe.value = newAvailable;
+
+                var  total = units * parseInt(tableH.boxg.value);
+                tableH.boxh.value = total  
+  }
+  function doinventory3(){
+                
+                var available= parseInt(tableH.boxi.value);
+                var units= parseInt(tableH.boxj.value);
+
+                var newAvailable= available - units;
+
+                tableH.boxi.value = newAvailable;
+
+                var  total = units * parseInt(tableH.boxk.value);
+                tableH.boxl.value = total  
+  }
+</script>
 <body>
     <div class="container">
             <nav class="navbar-navbar-expand-lg-navbar-light-bg-light">
                     <a class="navbar-brand" href="#">
-                            <img src="C:\projects\bip\Lipsome\Assets\img\weedhub.png" width="30" height="30" alt="">
+                            <img src="C:\projects\Lipsome\Assets\img\weedhub.png" width="30" height="30" alt="">
                           </a>
                           <a class="nav-item" href="#">Log Out</a>
                         </nav>
                         <div class="heading"> <h6>Store Inventory System</h6></div>
                         <br>
                         <div class="main-body">
-                                <table name="tableH" class="table table-striped">
+                          <form name="tableH">
+                                <table  class="table table-striped">
                                         <thead>
                                           <tr>
                                             <th scope="col">#</th>
@@ -47,20 +86,7 @@
                                           </tr>
                                         </thead>
                                         <tbody>
-                                          <script>
-                                            //collect currently available unit
-                                              //collect unit purchased
-                                              //deduct unit from available
-                                            function doinventory(){
-                                              
-                                              var available= parseInt(tableH.boxa.value);
-                                              var units= parseInt(tableH.boxb.value);
-                                 
-                                              var newAvailable= available - units;
-                                 
-                                              tableH.boxd.value = newAvailable;
-                                          }
-                                        </script>
+                                         
                                           <tr>
                                             <th scope="row">1</th>
                                             <td>Carburator</td>
@@ -68,27 +94,27 @@
                                             <td> <input  readonly name="boxa" value="15" size= "1" type="text" placeholder="0" ></td>
                                             <td><input onkeyup ="doinventory()" name="boxb" size="1" type="text" placeholder="0"></td>
                                             <td> <input readonly name="boxc" size="1" type="text" value="300"></td>
-                                            <td><input name="boxb" size="1" type="text" placeholder="0"></td>
+                                            <td><input name="boxd" size="1" type="text" placeholder="0"></td>
                                             <td><i class="fas fa-times"></i></td>
                                           </tr>
                                           <tr>
                                             <th scope="row">2</th>
                                             <td>Brake Pad</td>
                                             <td>Benz</td>
-                                            <td>30</td>
-                                            <td>04</td>
-                                            <td>190</td>
-                                            <td>760</td>
+                                            <td><input  readonly name="boxe" value="10" size= "1" type="text" placeholder="0" ></td>
+                                            <td><input onkeyup ="doinventory2()" name="boxf" size="1" type="text" placeholder="0"></td>
+                                            <td><input readonly name="boxg" size="1" type="text" value="190"></td>
+                                            <td><input name="boxh" size="1" type="text" placeholder="0"></td>
                                             <td><i class="fas fa-times"></i></td>
                                           </tr>
                                           <tr>
                                             <th scope="row">3</th>
                                             <td>Side Mirror</td>
                                             <td>BMW</td>
-                                            <td>15</td>
-                                            <td>02</td>
-                                            <td>400</td>
-                                            <td>800</td>
+                                            <td><input  readonly name="boxi" value="22" size= "1" type="text" placeholder="0" ></td>
+                                            <td><input onkeyup ="doinventory3()" name="boxj" size="1" type="text" placeholder="0"></td>
+                                            <td><input readonly name="boxk" size="1" type="text" value="250"></td>
+                                            <td><input name="boxl" size="1" type="text" placeholder="0"></td>
                                             <td><i class="fas fa-times"></i></td>
                                           </tr>
                                           <tr>
@@ -96,6 +122,7 @@
                                           </tr>
                                         </tbody>
                                       </table>
+                                    </form>
                                       <br>
                                       <body class="text-center">
                                       <form class="form-signin">
