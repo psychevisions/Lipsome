@@ -23,42 +23,37 @@
     .btn-btn-lg-btn-primary-btn-block2{width: 40%; color: red; margin-top: 5%}
 </style>
  <script>
-              function doinventory(){
+              function doinventory(boxa,boxb,boxc,boxd){
+
                 
-                var available= parseInt(tableH.boxa.value);
-                var units= parseInt(tableH.boxb.value);
+                var available= parseInt(boxa); //boxa,boxb, boxd,boxc
+                var units= parseInt(boxb);
 
                 var newAvailable= available - units;
 
-                tableH.boxa.value = newAvailable;
+                boxa = newAvailable; 
 
-                var  total = units * parseInt(tableH.boxc.value);
-                tableH.boxd.value = total  
-  }
-  function doinventory2(){
-                
-                var available= parseInt(tableH.boxe.value);
-                var units= parseInt(tableH.boxf.value);
+                var  total = units * parseInt(boxc);
+                boxd.value = total  
 
-                var newAvailable= available - units;
+                }
 
-                tableH.boxe.value = newAvailable;
+                function deleteRow(rowtodelete,rowdeletedid,rowtoupdate1='',rowtoupdate2=''){
 
-                var  total = units * parseInt(tableH.boxg.value);
-                tableH.boxh.value = total  
-  }
-  function doinventory3(){
-                
-                var available= parseInt(tableH.boxi.value);
-                var units= parseInt(tableH.boxj.value);
+                    document.getElementById(rowtodelete).style = "display:none";
 
-                var newAvailable= available - units;
+                    var row1number = parseInt(document.getElementById(rowdeletedid).innerHTML);
 
-                tableH.boxi.value = newAvailable;
+                    if(rowtoupdate1 != ''){
+                        document.getElementById(rowtoupdate1).innerHTML = row1number;
+                    }
 
-                var  total = units * parseInt(tableH.boxk.value);
-                tableH.boxl.value = total  
-  }
+                     if(rowtoupdate2 != ''){
+                        document.getElementById(rowtoupdate2).innerHTML = ++row1number;
+                    }
+
+                }
+
 </script>
 <body>
     <div class="container">
@@ -87,35 +82,35 @@
                                         </thead>
                                         <tbody>
                                          
-                                          <tr>
-                                            <th scope="row">1</th>
+                                          <tr id="row1">
+                                            <th id="row1number" scope="row">1</th>
                                             <td>Carburator</td>
                                             <td>Honda</td>
                                             <td> <input  readonly name="boxa" value="15" size= "1" type="text" placeholder="0" ></td>
-                                            <td><input onkeyup ="doinventory()" name="boxb" size="1" type="text" placeholder="0"></td>
+                                            <td><input onkeyup ="doinventory(tableH.boxa.value,this.value,tableH.boxc.value,tableH.boxd)" name="boxb" size="1" type="text" placeholder="0"></td>
                                             <td> <input readonly name="boxc" size="1" type="text" value="300"></td>
                                             <td><input name="boxd" size="1" type="text" placeholder="0"></td>
-                                            <td><i class="fas fa-times"></i></td>
+                                            <td><i class="fas fa-times" style="cursor: pointer" onclick="deleteRow('row1','row1number','row2number','row3number')"></i></td>
                                           </tr>
-                                          <tr>
-                                            <th scope="row">2</th>
+                                          <tr id="row2">
+                                            <th id="row2number" scope="row">2</th>
                                             <td>Brake Pad</td>
                                             <td>Benz</td>
                                             <td><input  readonly name="boxe" value="10" size= "1" type="text" placeholder="0" ></td>
-                                            <td><input onkeyup ="doinventory2()" name="boxf" size="1" type="text" placeholder="0"></td>
+                                            <td><input onkeyup ="doinventory(tableH.boxe.value,this.value,tableH.boxg.value,tableH.boxh)" name="boxf" size="1" type="text" placeholder="0"></td>
                                             <td><input readonly name="boxg" size="1" type="text" value="190"></td>
                                             <td><input name="boxh" size="1" type="text" placeholder="0"></td>
-                                            <td><i class="fas fa-times"></i></td>
+                                            <td><i style="cursor: pointer" onclick="deleteRow('row2','row2number','row3number')" class="fas fa-times"></i></td>
                                           </tr>
-                                          <tr>
-                                            <th scope="row">3</th>
+                                          <tr id="row3">
+                                            <th id="row3number" scope="row">3</th>
                                             <td>Side Mirror</td>
                                             <td>BMW</td>
                                             <td><input  readonly name="boxi" value="22" size= "1" type="text" placeholder="0" ></td>
-                                            <td><input onkeyup ="doinventory3()" name="boxj" size="1" type="text" placeholder="0"></td>
+                                            <td><input onkeyup ="doinventory(tableH.boxi.value,this.value,tableH.boxk.value,tableH.boxl)" name="boxj" size="1" type="text" placeholder="0"></td>
                                             <td><input readonly name="boxk" size="1" type="text" value="250"></td>
                                             <td><input name="boxl" size="1" type="text" placeholder="0"></td>
-                                            <td><i class="fas fa-times"></i></td>
+                                            <td><i onclick="deleteRow('row3','row3number')" style="cursor: pointer" class="fas fa-times"></i></td>
                                           </tr>
                                           <tr>
                                                 <th scope="row"><i class="far fa-plus-square"></i></th>
@@ -124,22 +119,22 @@
                                       </table>
                                     </form>
                                       <br>
-                                      <body class="text-center">
+                                      
                                       <form class="form-signin">
-                                            <img class="mb-4" src="/docs/4.2/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+                                            
                                             <h1 class="h3-mb-3-font-weight-normal">Customer Info</h1>
                                             <label for="inputEmail" class="sr-only">Name</label>
                                             <input type="email" id="inputEmail" class="form-control" placeholder="Name" required autofocus>
-                                            <label for="inputPassword" class="sr-only">Phone Number</label>
-                                            <input type="password" id="inputPassword" class="form-control" placeholder="Phone Number" required>
-                                            <label for="inputPassword" class="sr-only">Address</label>
-                                            <input type="password" id="inputPassword" class="form-control" placeholder="Address" required>
+                                            <label for="inputPhone" class="sr-only">Phone Number</label>
+                                            <input type="text" id="inputPhone" class="form-control" placeholder="Phone Number" required>
+                                            <label for="inputAddress" class="sr-only">Address</label>
+                                            <input type="text" id="inputAddress" class="form-control" placeholder="Address" required>
                                             
                                             <button class="btn-btn-lg-btn-primary-btn-block" type="submit">Place Order</button>
-                                            <button class="btn-btn-lg-btn-primary-btn-block2" type="submit">Cancel</button>
+                                            <button class="btn-btn-lg-btn-primary-btn-block2" type="reset">Cancel</button>
                                            
                                             </form>
-                                        </body>
+                                       
                         </div>
     </div>
     
