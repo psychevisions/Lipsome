@@ -6,30 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lipsome Auto-Part Retailer</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
-    <style>
-        .container{border: solid 1px black; background-color: #ECECEC}
-    .nav-item{margin-left: 2%; color: red}
-    .nav-item2{margin-left: 75%}
-    .navbar-navbar-expand-lg-navbar-light-bg-light{background-color: #FFF2F2;
-    border: solid 1px black; margin-top: 2%}
-    .heading{margin-top: 2%}
-    .navbar-brand{margin-left: 2%}
-    .Main-Body{background-color: white;
-    margin-top: 4%;
-    border: solid 1px black;
-    margin-bottom: 4%}
-   
-    .form{width: 85%;
-    margin-left: 8%;
-    margin-bottom: 3%;
-    }
-    .sub-name{margin-left: 46%}
-    .btn-primary{margin-left: 46%}
-    .heading{margin-left: 45%}
-    </style>
     
+    <link rel="stylesheet" href="Assets/css/styles.css" />
+    <script src="Assets/js/script.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 </head>
+
 <body>
     <div class="container">
         
@@ -47,28 +32,28 @@
                             <div class= "sub-name"><strong>Staff Information</strong></div>
                             <hr>
                                <br>
-                               <form>
+                               <form action="addstaff.php" method="post">
                                    <div class="form">
                                        <div class="form-group">
                                            <label for="Name">Name</label>
-                                           <input type="Prod-Name" class="form-control" id="InputProdName" aria-describedby="emailHelp" >
+                                           <input type="text" class="form-control" name="staff_name" id="InputProdName" aria-describedby="emailHelp" required >
                                           
                                          </div>
                                          <div class="form-group">
-                                           <label for="InputVehicleType">Staff ID</label>
-                                           <input type="VehicleType" class="form-control" id="exampleInputPassword1" >
+                                           <label for="staff_id">Staff ID</label>
+                                           <input type="email" name="staff_id" class="form-control" placeholder="email@company.com" required>
                                          </div>
                                          <div class="form-group">
-                                               <label for="StaffID">Phone Number </label>
-                                               <input type="staffid" class="form-control" id="InputStaffID" aria-describedby="emailHelp" >
+                                               <label for="staff_phone">Phone Number </label>
+                                               <input name="staff_phone"  type="text" class="form-control" id="InputStaffID" aria-describedby="emailHelp"required >
                                               
                                              </div>
                                              <div class="form-group">
-                                               <label for="exampleInputPassword1">Password</label>
-                                               <input type="password" class="form-control" id="exampleInputPassword1" >
+                                               <label for="password">Password</label>
+                                               <input type="password" class="form-control" name="staff_password" required >
                                              </div>
                                              
-                                         <button type="login" class="btn-primary">Add Staff</button>
+                                         <button type="submit" class="btn btn-sm btn-primary">Add Staff</button>
                                    </div>
                                  </form>
                                

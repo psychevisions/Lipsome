@@ -61,7 +61,7 @@
                     <a class="navbar-brand" href="#">
                             <img src="C:\projects\Lipsome\Assets\img\weedhub.png" width="30" height="30" alt="">
                           </a>
-                          <a class="nav-item" href="#">Log Out</a>
+                          <a class="nav-item" href="logout.php">Log Out</a>
                         </nav>
                         <div class="heading"> <h6>Store Inventory System</h6></div>
                         <br>
